@@ -31,8 +31,8 @@ Here is an example usage:
 // Create the dialog
 
 var picker = Dialogs.createMultiPicker({
-  title:"Hello World", 
-  options:["A","B","C"], 
+  title:"Hello World",
+  options:["A","B","C"],
   selected: ["B","C"],       // <-- optional
   okButtonTitle : "Yep",     // <-- optional
   cancelButtonTitle : "Nah"  // <-- optional
@@ -110,7 +110,7 @@ picker.addEventListener('click',function(e){
   if (!e.cancel) {
     var value = e.value; // JavaScript Date object
     var hour   = e.hour;
-    var minute = e.minute; 
+    var minute = e.minute;
   }
 });
 
@@ -123,11 +123,30 @@ picker.addEventListener('cancel', function() {
 picker.show();
 ~~~
 
+### List Picker
+
+![list](http://developer.android.com/images/ui/dialog_list.png)
+
+Example usage:
+
+~~~
+var picker = Dialogs.createListPicker({
+    title: "Pick a Color",
+    options: ["Red", "Green", "Blue"]
+});
+
+picker.addEventListener("click", function(evt){
+    Ti.API.info("Selected option at index "+evt.index);
+});
+
+picker.show();
+~~~
 
 ## Changelog
 * Added cancel button are displayed, Honeycomb later.
 * Added okButtonTitle, cancelButtonTitle and value properties.
 * Compatible Ti.UI.Picker.showTimePickerDialog and Ti.UI.Picker.showDatePickerDialog properties.
+* [brownemint] Added List Picker
 
 
 ###Licence: MIT

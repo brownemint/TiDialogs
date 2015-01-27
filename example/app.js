@@ -1,6 +1,6 @@
 // This is a test harness for your module
-// You should do something interesting in this harness 
-// to test out the module and to provide instructions 
+// You should do something interesting in this harness
+// to test out the module and to provide instructions
 // to users on how to use it by example.
 
 
@@ -51,7 +51,12 @@ var buttons = [ {
       var date = new Date();
       date.setHours(10);
       return tidialogs.createMultiPicker({title:"Hello World", options:["A","B","C"], selected: ["B","C"], okButtonTitle: "Yep", cancelButtonTitle:"Nah"});
-    }
+},	{
+	title: 'list picker',
+	dialog: function () {
+		return tidialogs.createListPicker({title: "Hello World", options:["A", "B", "C"]});
+	}
+}
 }]
 
 
